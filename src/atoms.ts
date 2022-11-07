@@ -1,3 +1,3 @@
 import {atom} from "jotai";
 
-export const countState = atom<number>(0)
+export const countAtom = atom<number>(0)

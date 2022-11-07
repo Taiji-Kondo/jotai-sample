@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import './App.css';
-import {countState} from "./atoms";
+import {countAtom} from "./atoms";
 import {Provider, useAtom, useAtomValue} from "jotai";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 }
 
 const ProviderLessComponent = () => {
-  const [count, setCount] = useAtom(countState);
+  const [count, setCount] = useAtom(countAtom);
 
   return (
     <div>
@@ -33,7 +33,7 @@ const ProviderLessComponent = () => {
 }
 
 const ProviderLessBrotherComponent = () => {
-  const count = useAtomValue(countState);
+  const count = useAtomValue(countAtom);
 
   return (
     <div>
@@ -44,7 +44,7 @@ const ProviderLessBrotherComponent = () => {
 }
 
 const ProviderComponent = ({children}: {children: ReactNode}) => {
-  const [count, setCount] = useAtom(countState);
+  const [count, setCount] = useAtom(countAtom);
 
   return (
     <div>
@@ -58,7 +58,7 @@ const ProviderComponent = ({children}: {children: ReactNode}) => {
 }
 
 const ProviderNestComponent = () => {
-  const count = useAtomValue(countState);
+  const count = useAtomValue(countAtom);
 
   return (
     <div>
